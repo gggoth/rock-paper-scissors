@@ -7,7 +7,23 @@ this function gets the choice of the computer and
 2 = scissors
 */
 
+let rock = "Rock!"
+let paper = "Paper!"
+let scissors = "Scissors!"
+
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random()* 3);
-    return computerChoice;
+       
+    if (computerChoice == 0) {
+        return rock;
+        }
+        else if (computerChoice == 1) {
+            return paper;
+                    }
+        else {
+            return scissors;
+        }
+
+    
 }
+
