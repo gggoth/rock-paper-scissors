@@ -7,6 +7,12 @@ this function gets the choice of the computer and
 2 = scissors
 */
 
+function game(){
+
+
+
+}
+
 
 function playRound(PlayerSelection, computerSelection) {
    
@@ -55,8 +61,7 @@ function getComputerChoice() {
 }
 
 
-let initialPlayerSelection = prompt("choose weapon:");
-let PlayerSelection = initialPlayerSelection.toLowerCase();
+let PlayerSelection = prompt("choose weapon:").toLowerCase();
 console.log(PlayerSelection);
 let computerSelection = getComputerChoice();
 console.log(computerSelection);
