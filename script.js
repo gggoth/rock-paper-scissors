@@ -1,4 +1,4 @@
-console.log("hello rock paper scissors");
+console.log("This is Rock Paper Scissors è_é");
 
 /* 
 this function gets the choice of the computer and
@@ -16,12 +16,8 @@ function game(){
 
     for (let i = 1; i <= 5; i++) {
     
-        
-
         function playRound(PlayerSelection, computerSelection) {
-            
-            
-
+    
             if (PlayerSelection == "rock" && computerSelection == "paper") {
                 scoreComputer = ++scoreComputer;
                 return "you lose!"
@@ -59,8 +55,7 @@ function game(){
                 else if (PlayerSelection != "scissors" && PlayerSelection != "rock" && PlayerSelection != "paper") {
                     return "sorry, your weapons are: rock, paper, scissors"
                 }
-                
-
+          
         }
 
 
@@ -79,7 +74,7 @@ function game(){
         }
 
 
-        let PlayerSelection = prompt("choose weapon:").toLowerCase();
+        let PlayerSelection = prompt("choose weapon:", "rock, paper or scissors").toLowerCase();
         console.log(PlayerSelection);
 
         let computerSelection = getComputerChoice();
