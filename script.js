@@ -11,6 +11,9 @@ let scoreComputer = 0;
 let scorePlayer = 0; 
 
 
+const div = document.querySelector('div');
+div.textContent = "Score: " +  scorePlayer + " " + scoreComputer
+
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -23,9 +26,20 @@ buttons.forEach((button) => {
         playRound(PlayerSelection, computerSelection);
         console.log(scorePlayer);
         console.log(scoreComputer);
+        const div = document.querySelector('div');
+        div.textContent = "Score: " +  scorePlayer + " " + scoreComputer
+        
     })
 })
 
+const btn = document.querySelector('#playAgain');
+btn.addEventListener('click', () => {
+    scoreComputer = 0;
+    scorePlayer = 0;
+    const div = document.querySelector('div');
+    div.textContent = "Score: " +  scorePlayer + " " + scoreComputer
+
+})
 
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random()* 3);
@@ -42,9 +56,18 @@ function getComputerChoice() {
 
 
 function endGame(){
-    alert("the game is finished:\n" + "Your score: " + scorePlayer + "\nComputer Score: " + scoreComputer);
-    scoreComputer = 0;
-    scorePlayer = 0;
+    const div = document.querySelector('div');
+    div.textContent = "The game is finished!" 
+    const div1 = document.createElement('div');
+    div1.textContent = "Your score: " + scorePlayer 
+    div.appendChild(div1);
+    const div2 = document.createElement('div2')
+    div2.textContent = "Computer score: " + scoreComputer
+    div.appendChild(div2)
+    alert("the game is finished:\n" + "Your score: " + scorePlayer + "\nComputer Score: " + scoreComputer); 
+    /*scoreComputer = 0;
+    scorePlayer = 0; */
+
 }
 
 
@@ -137,6 +160,7 @@ function playRound(PlayerSelection, computerSelection) {
             return "sorry, your weapons are: rock, paper, scissors"
         }
 }
+
 
 
 
