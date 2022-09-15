@@ -11,8 +11,8 @@ let scoreComputer = 0;
 let scorePlayer = 0; 
 
 
-const div = document.querySelector('div');
-div.textContent = "Score: " +  scorePlayer + " " + scoreComputer
+/* const div = document.querySelector('div');
+div.textContent = "Score: " +  scorePlayer + " " + scoreComputer */
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
@@ -27,17 +27,21 @@ buttons.forEach((button) => {
         console.log(scorePlayer);
         console.log(scoreComputer);
         const div = document.querySelector('div');
-        div.textContent = "Score: " +  scorePlayer + " " + scoreComputer
+        div.textContent = "Score: " +  scorePlayer + " " + scoreComputer 
         
-    })
+    }
+    )
 })
 
 const btn = document.querySelector('#playAgain');
 btn.addEventListener('click', () => {
     scoreComputer = 0;
     scorePlayer = 0;
-    const div = document.querySelector('div');
-    div.textContent = "Score: " +  scorePlayer + " " + scoreComputer
+    /* const div = document.querySelector('div');
+    div.textContent = "Score: " +  scorePlayer + " " + scoreComputer */
+    document.querySelector("#rock").disabled = false;
+    document.querySelector("#paper").disabled = false;
+    document.querySelector("#scissors").disabled = false;
 
 })
 
@@ -67,6 +71,9 @@ function endGame(){
     alert("the game is finished:\n" + "Your score: " + scorePlayer + "\nComputer Score: " + scoreComputer); 
     /*scoreComputer = 0;
     scorePlayer = 0; */
+    document.querySelector("#rock").disabled = true;
+    document.querySelector("#paper").disabled = true;
+    document.querySelector("#scissors").disabled = true;
 
 }
 
