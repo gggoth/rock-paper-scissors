@@ -42,29 +42,64 @@ function getComputerChoice() {
         }
 }
 
+function endGame(){
+    alert("the game is finished:\n" + "Your score: " + scorePlayer + "\nComputer Score: " + scoreComputer);
+    scoreComputer = 0;
+    scorePlayer = 0;
+}
+
 function playRound(PlayerSelection, computerSelection) {
     
     if (PlayerSelection == "rock" && computerSelection == "paper") {
+        alert("you lose!");     
         scoreComputer = ++scoreComputer;
-        alert("you lose!");
+        if (scoreComputer == 5 || scorePlayer == 5) {
+            alert("game finished");
+            endGame();
+        }
+        else {
+
+        }
+        
     }
         else if (PlayerSelection == "rock" && computerSelection == "rock") {
             alert("you tie!");
+            
         }
     
         else if (PlayerSelection == "rock" && computerSelection == "scissors") {
-            scorePlayer = ++scorePlayer;
             alert("you win!");
+            scorePlayer = ++scorePlayer;
+            if (scoreComputer == 5 || scorePlayer == 5) {
+                alert("game finished");
+                endGame();
+            }
+            else {}
+            
+            
              }
 
         else if (PlayerSelection == "paper" && computerSelection == "scissors") {
-            scoreComputer = ++scoreComputer;
             alert("you lose!");
+            scoreComputer = ++scoreComputer;
+            if (scoreComputer == 5 || scorePlayer == 5) {
+                alert("game finished");
+                endGame();
+            }
+            else {     
+            }
         }
 
         else if (PlayerSelection == "paper" && computerSelection == "rock") {
-            scorePlayer = ++scorePlayer;
             alert("you win!");
+            scorePlayer = ++scorePlayer;
+            if (scoreComputer == 5 || scorePlayer == 5) {
+                alert("game finished");
+                endGame();
+            }
+            else {
+            
+             }
         }
 
         else if (PlayerSelection == "paper" && computerSelection == "paper") {
@@ -76,13 +111,27 @@ function playRound(PlayerSelection, computerSelection) {
         }
 
         else if (PlayerSelection == "scissors" && computerSelection == "rock") {
-            scoreComputer = ++scoreComputer;
             alert("you lose!");
+            scoreComputer = ++scoreComputer;
+            if (scoreComputer == 5 || scorePlayer == 5) {
+                alert("game finished");
+                endGame();
+            }
+            else {     
+            
+        }
         }
 
         else if (PlayerSelection == "scissors" && computerSelection == "paper") {
-            scorePlayer = ++scorePlayer;
             alert("you win!");
+            scorePlayer = ++scorePlayer;
+            if (scoreComputer == 5 || scorePlayer == 5) {
+                alert("game finished");
+                endGame();
+            }
+            else {
+            
+            }
         }
 
         else if (PlayerSelection != "scissors" && PlayerSelection != "rock" && PlayerSelection != "paper") {
