@@ -10,6 +10,7 @@ this function gets the choice of the computer and
 let scoreComputer = 0;
 let scorePlayer = 0; 
 
+
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -22,15 +23,12 @@ buttons.forEach((button) => {
         playRound(PlayerSelection, computerSelection);
         console.log(scorePlayer);
         console.log(scoreComputer);
-           
-        
     })
 })
 
 
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random()* 3);
-    
     if (computerChoice == 0) {
         return "rock";
         }
@@ -42,14 +40,15 @@ function getComputerChoice() {
         }
 }
 
+
 function endGame(){
     alert("the game is finished:\n" + "Your score: " + scorePlayer + "\nComputer Score: " + scoreComputer);
     scoreComputer = 0;
     scorePlayer = 0;
 }
 
+
 function playRound(PlayerSelection, computerSelection) {
-    
     if (PlayerSelection == "rock" && computerSelection == "paper") {
         alert("you lose!");     
         scoreComputer = ++scoreComputer;
@@ -62,12 +61,12 @@ function playRound(PlayerSelection, computerSelection) {
         }
         
     }
-        else if (PlayerSelection == "rock" && computerSelection == "rock") {
+    else if (PlayerSelection == "rock" && computerSelection == "rock") {
             alert("you tie!");
             
         }
     
-        else if (PlayerSelection == "rock" && computerSelection == "scissors") {
+    else if (PlayerSelection == "rock" && computerSelection == "scissors") {
             alert("you win!");
             scorePlayer = ++scorePlayer;
             if (scoreComputer == 5 || scorePlayer == 5) {
@@ -79,7 +78,7 @@ function playRound(PlayerSelection, computerSelection) {
             
              }
 
-        else if (PlayerSelection == "paper" && computerSelection == "scissors") {
+    else if (PlayerSelection == "paper" && computerSelection == "scissors") {
             alert("you lose!");
             scoreComputer = ++scoreComputer;
             if (scoreComputer == 5 || scorePlayer == 5) {
@@ -90,7 +89,7 @@ function playRound(PlayerSelection, computerSelection) {
             }
         }
 
-        else if (PlayerSelection == "paper" && computerSelection == "rock") {
+    else if (PlayerSelection == "paper" && computerSelection == "rock") {
             alert("you win!");
             scorePlayer = ++scorePlayer;
             if (scoreComputer == 5 || scorePlayer == 5) {
@@ -102,15 +101,15 @@ function playRound(PlayerSelection, computerSelection) {
              }
         }
 
-        else if (PlayerSelection == "paper" && computerSelection == "paper") {
+    else if (PlayerSelection == "paper" && computerSelection == "paper") {
             alert("you tie!");
         }
 
-        else if (PlayerSelection == "scissors" && computerSelection == "scissors") {
+    else if (PlayerSelection == "scissors" && computerSelection == "scissors") {
             alert("you tie!");
         }
 
-        else if (PlayerSelection == "scissors" && computerSelection == "rock") {
+    else if (PlayerSelection == "scissors" && computerSelection == "rock") {
             alert("you lose!");
             scoreComputer = ++scoreComputer;
             if (scoreComputer == 5 || scorePlayer == 5) {
@@ -122,7 +121,7 @@ function playRound(PlayerSelection, computerSelection) {
         }
         }
 
-        else if (PlayerSelection == "scissors" && computerSelection == "paper") {
+    else if (PlayerSelection == "scissors" && computerSelection == "paper") {
             alert("you win!");
             scorePlayer = ++scorePlayer;
             if (scoreComputer == 5 || scorePlayer == 5) {
@@ -134,10 +133,10 @@ function playRound(PlayerSelection, computerSelection) {
             }
         }
 
-        else if (PlayerSelection != "scissors" && PlayerSelection != "rock" && PlayerSelection != "paper") {
+    else if (PlayerSelection != "scissors" && PlayerSelection != "rock" && PlayerSelection != "paper") {
             return "sorry, your weapons are: rock, paper, scissors"
         }
-    }
+}
 
 
 
