@@ -20,8 +20,7 @@ buttons.forEach((button) => {
         let computerSelection = getComputerChoice(); 
         console.log(PlayerSelection);
         console.log(computerSelection);
-        
-        
+                
         
         playRound(PlayerSelection, computerSelection);
         console.log(scorePlayer);
@@ -29,7 +28,13 @@ buttons.forEach((button) => {
             const container = document.querySelector('#score');
             const score5 = document.createElement('div');
             score5.textContent = "Score: " +  scorePlayer + " " + scoreComputer;
+            score5.style.cssText = "margin-top: 10px;"
             container.appendChild(score5);
+            const score3 = document.createElement('div'); 
+            score3.textContent = "You: " + PlayerSelection + " Computer: " + computerSelection
+            score3.style.cssText = "margin-bottom: 30px;"
+            container.appendChild(score3);
+
         
     }
     )
@@ -63,6 +68,8 @@ function getComputerChoice() {
 }
 
 
+
+
 function endGame(){
     document.querySelector("#rock").disabled = true;
     document.querySelector("#paper").disabled = true;
@@ -71,13 +78,27 @@ function endGame(){
         const score = document.createElement('div');
         const score1 = document.createElement('div');
         const score2 = document.createElement('div');
-        score.textContent = "The game is finished!";
+        score.textContent = " ";
         score1.textContent = "Your Score: " + scorePlayer;
         score2.textContent = "Computer Score: " + scoreComputer;
+        score2.style.cssText = "padding-bottom: 30px;"
+        if (scorePlayer > scoreComputer) {
+            const score7 = document.createElement('div');
+            score7.textContent = "Congrats! you won!"
+            container.appendChild(score7);
+            
+        }
+            else {
+                const score8 = document.createElement('div');
+            score8.textContent = "Almost! the computer won!"
+            score8.style.cssText = "margin-top: 30px;"
+            container.appendChild(score8);
+            }
         container.appendChild(score);
         container.appendChild(score1);
         container.appendChild(score2);
         score5.textContent = " ";
+        
         
 
 
@@ -100,7 +121,7 @@ function endGame(){
 
 function playRound(PlayerSelection, computerSelection) {
     if (PlayerSelection == "rock" && computerSelection == "paper") {
-        alert("you lose!");     
+        /* alert("you lose!"); */     
         scoreComputer = ++scoreComputer;
         if (scoreComputer == 5 || scorePlayer == 5) {
             alert("game finished");
@@ -112,15 +133,15 @@ function playRound(PlayerSelection, computerSelection) {
         
     }
     else if (PlayerSelection == "rock" && computerSelection == "rock") {
-            alert("you tie!");
+            /* alert("you tie!"); */
             
         }
     
     else if (PlayerSelection == "rock" && computerSelection == "scissors") {
-            alert("you win!");
+            /* alert("you win!"); */
             scorePlayer = ++scorePlayer;
             if (scoreComputer == 5 || scorePlayer == 5) {
-                alert("game finished");
+                alert("game finished"); 
                 endGame();
             }
             else {}
@@ -129,7 +150,7 @@ function playRound(PlayerSelection, computerSelection) {
              }
 
     else if (PlayerSelection == "paper" && computerSelection == "scissors") {
-            alert("you lose!");
+            /* alert("you lose!"); */
             scoreComputer = ++scoreComputer;
             if (scoreComputer == 5 || scorePlayer == 5) {
                 alert("game finished");
@@ -140,7 +161,7 @@ function playRound(PlayerSelection, computerSelection) {
         }
 
     else if (PlayerSelection == "paper" && computerSelection == "rock") {
-            alert("you win!");
+            /* alert("you win!"); */
             scorePlayer = ++scorePlayer;
             if (scoreComputer == 5 || scorePlayer == 5) {
                 alert("game finished");
@@ -152,15 +173,15 @@ function playRound(PlayerSelection, computerSelection) {
         }
 
     else if (PlayerSelection == "paper" && computerSelection == "paper") {
-            alert("you tie!");
+            /* alert("you tie!"); */
         }
 
     else if (PlayerSelection == "scissors" && computerSelection == "scissors") {
-            alert("you tie!");
+            /* alert("you tie!"); */
         }
 
     else if (PlayerSelection == "scissors" && computerSelection == "rock") {
-            alert("you lose!");
+            /* alert("you lose!"); */
             scoreComputer = ++scoreComputer;
             if (scoreComputer == 5 || scorePlayer == 5) {
                 alert("game finished");
@@ -172,7 +193,7 @@ function playRound(PlayerSelection, computerSelection) {
         }
 
     else if (PlayerSelection == "scissors" && computerSelection == "paper") {
-            alert("you win!");
+            /* alert("you win!"); */
             scorePlayer = ++scorePlayer;
             if (scoreComputer == 5 || scorePlayer == 5) {
                 alert("game finished");
