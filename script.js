@@ -10,6 +10,8 @@ this function gets the choice of the computer and
 let scoreComputer = 0;
 let scorePlayer = 0; 
 
+const container = document.querySelector('#score');
+container.textContent = "Select your weapon to start the game!";
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
@@ -18,6 +20,7 @@ buttons.forEach((button) => {
         let computerSelection = getComputerChoice(); 
         console.log(PlayerSelection);
         console.log(computerSelection);
+        
         
         
         playRound(PlayerSelection, computerSelection);
