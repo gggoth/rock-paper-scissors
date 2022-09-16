@@ -11,9 +11,6 @@ let scoreComputer = 0;
 let scorePlayer = 0; 
 
 
-/* const div = document.querySelector('div');
-div.textContent = "Score: " +  scorePlayer + " " + scoreComputer */
-
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -26,8 +23,10 @@ buttons.forEach((button) => {
         playRound(PlayerSelection, computerSelection);
         console.log(scorePlayer);
         console.log(scoreComputer);
-        const div = document.querySelector('div');
-        div.textContent = "Score: " +  scorePlayer + " " + scoreComputer 
+            const container = document.querySelector('#score');
+            const score5 = document.createElement('div');
+            score5.textContent = "Score: " +  scorePlayer + " " + scoreComputer;
+            container.appendChild(score5);
         
     }
     )
@@ -42,6 +41,8 @@ btn.addEventListener('click', () => {
     document.querySelector("#rock").disabled = false;
     document.querySelector("#paper").disabled = false;
     document.querySelector("#scissors").disabled = false;
+        const container = document.querySelector('#score');
+        container.textContent = "Select your weapon to start the game!";
 
 })
 
@@ -60,7 +61,22 @@ function getComputerChoice() {
 
 
 function endGame(){
-    const div = document.querySelector('div');
+        
+    const container = document.querySelector('#score');
+        const score = document.createElement('div');
+        const score1 = document.createElement('div');
+        const score2 = document.createElement('div');
+        score.textContent = "The game is finished!";
+        score1.textContent = "Your Score: " + scorePlayer;
+        score2.textContent = "Computer Score: " + scoreComputer;
+        container.appendChild(score);
+        container.appendChild(score1);
+        container.appendChild(score2);
+        score5.textContent = " ";
+
+
+
+    /* const div = document.querySelector('div');
     div.textContent = "The game is finished!" 
     const div1 = document.createElement('div');
     div1.textContent = "Your score: " + scorePlayer 
@@ -68,7 +84,7 @@ function endGame(){
     const div2 = document.createElement('div2')
     div2.textContent = "Computer score: " + scoreComputer
     div.appendChild(div2)
-    alert("the game is finished:\n" + "Your score: " + scorePlayer + "\nComputer Score: " + scoreComputer); 
+    /* alert("the game is finished:\n" + "Your score: " + scorePlayer + "\nComputer Score: " + scoreComputer); */
     /*scoreComputer = 0;
     scorePlayer = 0; */
     document.querySelector("#rock").disabled = true;
