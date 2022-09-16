@@ -1,15 +1,18 @@
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
 }
+
+body {
+    background-color: #B7B7A4;
+}
+
 
 button {
     padding: 5px 10px 5px 10px;
-    margin: 5px 3px 10px 3px;
+    margin: 15px 3px 10px 3px;
 }
 
-#rock {
-    margin-top: 15px;
-}
 
 body {
     text-align: center;
