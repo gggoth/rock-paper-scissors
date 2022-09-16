@@ -64,7 +64,9 @@ function getComputerChoice() {
 
 
 function endGame(){
-        
+    document.querySelector("#rock").disabled = true;
+    document.querySelector("#paper").disabled = true;
+    document.querySelector("#scissors").disabled = true;
     const container = document.querySelector('#score');
         const score = document.createElement('div');
         const score1 = document.createElement('div');
@@ -76,6 +78,7 @@ function endGame(){
         container.appendChild(score1);
         container.appendChild(score2);
         score5.textContent = " ";
+        
 
 
 
@@ -90,9 +93,7 @@ function endGame(){
     /* alert("the game is finished:\n" + "Your score: " + scorePlayer + "\nComputer Score: " + scoreComputer); */
     /*scoreComputer = 0;
     scorePlayer = 0; */
-    document.querySelector("#rock").disabled = true;
-    document.querySelector("#paper").disabled = true;
-    document.querySelector("#scissors").disabled = true;
+    
 
 }
 
