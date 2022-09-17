@@ -85,13 +85,14 @@ function endGame(){
         if (scorePlayer > scoreComputer) {
             const score7 = document.createElement('div');
             score7.textContent = "Congrats! you won!"
+            score7.style.cssText = "font-weight: bold;"
             container.appendChild(score7);
             
         }
             else {
                 const score8 = document.createElement('div');
             score8.textContent = "Almost! the computer won!"
-            score8.style.cssText = "margin-top: 30px;"
+            score8.style.cssText = "margin-top: 30px; font-weight: bold;"
             container.appendChild(score8);
             }
         container.appendChild(score);
