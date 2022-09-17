@@ -32,7 +32,7 @@ buttons.forEach((button) => {
             container.appendChild(score5);
             const score3 = document.createElement('div'); 
             score3.textContent = "You: " + PlayerSelection + " Computer: " + computerSelection
-            score3.style.cssText = "margin-bottom: 30px;"
+            score3.style.cssText = "margin-bottom: 20px;"
             container.appendChild(score3);
 
         
